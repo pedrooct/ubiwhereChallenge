@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+
+message simulateDataRequest {
+    int64 d1 = 1;
+    int64 d2 = 2;
+    int64 d3 = 3;
+    int64 d4 = 4;
+}
+
+message helloResponse {
+    string ok = 1;
+}
+
+service helloService {
+    rpc simulate(simulateDataRequest) returns (helloResponse) {};
+}
