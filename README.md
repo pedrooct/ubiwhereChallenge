@@ -69,8 +69,9 @@ curl --location --request GET '127.0.0.1:8008/get/avg' \
 Go to the gRPC directory and run the following commands:
 - First enter the server folder and execute: go run main.go
 - Second go to the client folder and execute: go run main.go
-With this process you will see that the client send a message(json) to the server with the generate values.
+With this process you will see that the client send a message(json) to the server with the generate values.  
+P.S: The gRPC generator doesn't save to the database.
 
 ### Final considerations 
 
-Since this was a challenge database security and transactions were not implemented.   
+Since this was a challenge database security and transactions were not implemented. 
