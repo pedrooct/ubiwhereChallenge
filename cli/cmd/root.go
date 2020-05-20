@@ -7,6 +7,9 @@ import (
 	"os"
 )
 
+/*
+Test command for cli
+ */
 var rootCmd = &cobra.Command{
 	Use:   "test",
 	Short: "This is just a test for the cli commands",

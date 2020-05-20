@@ -17,13 +17,15 @@ func openDatabase() *sql.DB {
 	statement.Exec()
 	return database
 }
-
+/*
+I didn't implemented json because of time. Response as string.
+ */
 func main(){
 	r := gin.Default()
 	r.GET("/get/last/:n", func (c* gin.Context){
 		i, err := strconv.Atoi(c.Param("n"))
 		if err !=nil || i < 0 && i > 10 {
-			c.JSON(200,"Error: Invalid parameter")
+			c.JSON(400,"Error: Invalid parameter")
 			return
 		}
 		var result string
@@ -43,7 +45,7 @@ func main(){
 	r.GET("/get/lastv/:n" , func (c* gin.Context){
 		i, err := strconv.Atoi(c.Param("n"))
 		if err !=nil || i < 0 && i > 10 {
-			c.JSON(200,"Error: Invalid parameter")
+			c.JSON(400,"Error: Invalid parameter")
 			return
 		}
 		body, err := ioutil.ReadAll(c.Request.Body)
@@ -56,7 +58,7 @@ func main(){
 				q := "SELECT " + args[v] + " FROM simu_device ORDER BY id DESC limit ?;"
 				rows, err := db.Query(q, i)
 				if err != nil {
-					c.JSON(200,"Error: Query malformed")
+					c.JSON(400,"Error: Query malformed")
 					return
 				}
 				result = result + fmt.Sprintf("[%s:", args[v])
@@ -73,7 +75,7 @@ func main(){
 	r.GET("/get/avg" , func (c* gin.Context){
 		body, err := ioutil.ReadAll(c.Request.Body)
 		if err!=nil {
-			c.JSON(200, "Error: Body malformed")
+			c.JSON(400, "Error: Body malformed")
 			return
 		}
 		args:= strings.Split(string(body),",")
@@ -84,7 +86,7 @@ func main(){
 			if args[v] == "d1" ||args[v] == "d2" ||args[v] == "d3" || args[v] == "d4" {
 				rows, err := db.Query("SELECT avg("+args[v]+") as avg_val FROM simu_device;")
 				if err != nil {
-					c.JSON(200,"Error: Query malformed")
+					c.JSON(400,"Error: Query malformed")
 					return
 				}
 				result = result + fmt.Sprintf("[Avg %s:",args[v])

@@ -13,8 +13,9 @@ import (
 func init() {
 	rootCmd.AddCommand(getlastv)
 }
-
-
+/*
+This command allows to fetch of the last n metrics for one or more variables.
+*/
 var getlastv = &cobra.Command{
 	Use:   "getLastV",
 	Short: "Get last n metrics for one or more variables",
@@ -33,7 +34,7 @@ var getlastv = &cobra.Command{
 		var val int
 		for v :=range args{
 			if v!=0{
-				q:="SELECT "+args[v]+" FROM simu_device ORDER BY id DESC limit ?;"
+				q:="SELECT "+args[v]+" FROM simu_device ORDER BY id DESC limit ?;" // For some reason i had to join strings
 				rows, err := db.Query(q,i)
 				if err != nil{
 					fmt.Printf("Error: query malformed\n")

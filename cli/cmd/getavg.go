@@ -13,7 +13,9 @@ func init() {
 	rootCmd.AddCommand(getavg)
 }
 
-
+/*
+This command allows to fetch of the avg of a value for one or more variables
+*/
 var getavg = &cobra.Command{
 	Use:   "getAvg",
 	Short: "Get avg of a value for one or more variables",
@@ -26,7 +28,7 @@ var getavg = &cobra.Command{
 		db:= openDatabase()
 		var avg float64
 		for v:=range args{
-			rows, err := db.Query("SELECT avg("+args[v]+") as avg_val FROM simu_device;")
+			rows, err := db.Query("SELECT avg("+args[v]+") as avg_val FROM simu_device;") // Performance may be impacted
 			if err != nil{
 				fmt.Printf("Error: query malformed !\n")
 				return

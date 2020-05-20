@@ -5,23 +5,22 @@ import (
 	"log"
 	"net"
 
+	pb "github.com/pedrooct/ubiwhereChallenge/gRPC/pb"
 	"google.golang.org/grpc"
-	pb "github.com/pedrooct/ubiwhereChallenge/tree/master/gRPC/pb"
 )
 
 const (
 	port = ":50051"
 )
 
-// server is used to implement helloworld.GreeterServer.
 type server struct {
 	pb.UnimplementedSimulateServiceServer
 }
 
-// SayHello implements helloworld.GreeterServer
-func (s *server) simulate(ctx context.Context, in *pb.SimulateDataRequest) (*pb.SimulateDateResponse, error) {
-	log.Printf("Received: %v", in.GetD1())
-	return &pb.SimulateDataResponse{Message: "Ok"}, nil
+
+func (s *server) Simulate(ctx context.Context, in *pb.SimulateDataRequest) (*pb.SimulateDataResponse, error) {
+	log.Printf("Received: %v,%v,%v,%v", in.GetD1(),in.GetD2(),in.GetD3(),in.GetD4())
+	return &pb.SimulateDataResponse{Ok: "Ok"}, nil
 }
 
 func main() {

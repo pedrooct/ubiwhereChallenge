@@ -9,10 +9,10 @@ message SimulateDataRequest {
     int64 d4 = 4;
 }
 
-message SimulateDateResponse {
+message SimulateDataResponse {
     string ok = 1;
 }
 
 service SimulateService {
-    rpc simulate(SimulateDataRequest) returns (SimulateDateResponse) {};
+    rpc Simulate(SimulateDataRequest) returns (SimulateDataResponse) {};
 }

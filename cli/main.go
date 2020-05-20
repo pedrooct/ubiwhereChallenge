@@ -5,5 +5,5 @@ import (
 )
 
 func main(){
-	cmd.Execute()
+	cmd.Execute() // points to root file on /cmd
 }

@@ -100,7 +100,7 @@ func (x *SimulateDataRequest) GetD4() int64 {
 	return 0
 }
 
-type SimulateDateResponse struct {
+type SimulateDataResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -108,8 +108,8 @@ type SimulateDateResponse struct {
 	Ok string `protobuf:"bytes,1,opt,name=ok,proto3" json:"ok,omitempty"`
 }
 
-func (x *SimulateDateResponse) Reset() {
-	*x = SimulateDateResponse{}
+func (x *SimulateDataResponse) Reset() {
+	*x = SimulateDataResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_simulate_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -117,13 +117,13 @@ func (x *SimulateDateResponse) Reset() {
 	}
 }
 
-func (x *SimulateDateResponse) String() string {
+func (x *SimulateDataResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SimulateDateResponse) ProtoMessage() {}
+func (*SimulateDataResponse) ProtoMessage() {}
 
-func (x *SimulateDateResponse) ProtoReflect() protoreflect.Message {
+func (x *SimulateDataResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_simulate_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -135,12 +135,12 @@ func (x *SimulateDateResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SimulateDateResponse.ProtoReflect.Descriptor instead.
-func (*SimulateDateResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use SimulateDataResponse.ProtoReflect.Descriptor instead.
+func (*SimulateDataResponse) Descriptor() ([]byte, []int) {
 	return file_simulate_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *SimulateDateResponse) GetOk() string {
+func (x *SimulateDataResponse) GetOk() string {
 	if x != nil {
 		return x.Ok
 	}
@@ -157,13 +157,13 @@ var file_simulate_proto_rawDesc = []byte{
 	0x32, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x64, 0x32, 0x12, 0x0e, 0x0a, 0x02, 0x64,
 	0x33, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x64, 0x33, 0x12, 0x0e, 0x0a, 0x02, 0x64,
 	0x34, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x64, 0x34, 0x22, 0x26, 0x0a, 0x14, 0x53,
-	0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x6f, 0x6b, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x02, 0x6f, 0x6b, 0x32, 0x52, 0x0a, 0x0f, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3f, 0x0a, 0x08, 0x73, 0x69, 0x6d, 0x75, 0x6c, 0x61,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3f, 0x0a, 0x08, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61,
 	0x74, 0x65, 0x12, 0x17, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65,
 	0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x70, 0x62,
-	0x2e, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73,
+	0x2e, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
@@ -182,11 +182,11 @@ func file_simulate_proto_rawDescGZIP() []byte {
 var file_simulate_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_simulate_proto_goTypes = []interface{}{
 	(*SimulateDataRequest)(nil),  // 0: pb.SimulateDataRequest
-	(*SimulateDateResponse)(nil), // 1: pb.SimulateDateResponse
+	(*SimulateDataResponse)(nil), // 1: pb.SimulateDataResponse
 }
 var file_simulate_proto_depIdxs = []int32{
-	0, // 0: pb.SimulateService.simulate:input_type -> pb.SimulateDataRequest
-	1, // 1: pb.SimulateService.simulate:output_type -> pb.SimulateDateResponse
+	0, // 0: pb.SimulateService.Simulate:input_type -> pb.SimulateDataRequest
+	1, // 1: pb.SimulateService.Simulate:output_type -> pb.SimulateDataResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -213,7 +213,7 @@ func file_simulate_proto_init() {
 			}
 		}
 		file_simulate_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SimulateDateResponse); i {
+			switch v := v.(*SimulateDataResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -257,7 +257,7 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type SimulateServiceClient interface {
-	Simulate(ctx context.Context, in *SimulateDataRequest, opts ...grpc.CallOption) (*SimulateDateResponse, error)
+	Simulate(ctx context.Context, in *SimulateDataRequest, opts ...grpc.CallOption) (*SimulateDataResponse, error)
 }
 
 type simulateServiceClient struct {
@@ -268,9 +268,9 @@ func NewSimulateServiceClient(cc grpc.ClientConnInterface) SimulateServiceClient
 	return &simulateServiceClient{cc}
 }
 
-func (c *simulateServiceClient) Simulate(ctx context.Context, in *SimulateDataRequest, opts ...grpc.CallOption) (*SimulateDateResponse, error) {
-	out := new(SimulateDateResponse)
-	err := c.cc.Invoke(ctx, "/pb.SimulateService/simulate", in, out, opts...)
+func (c *simulateServiceClient) Simulate(ctx context.Context, in *SimulateDataRequest, opts ...grpc.CallOption) (*SimulateDataResponse, error) {
+	out := new(SimulateDataResponse)
+	err := c.cc.Invoke(ctx, "/pb.SimulateService/Simulate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -279,14 +279,14 @@ func (c *simulateServiceClient) Simulate(ctx context.Context, in *SimulateDataRe
 
 // SimulateServiceServer is the server API for SimulateService service.
 type SimulateServiceServer interface {
-	Simulate(context.Context, *SimulateDataRequest) (*SimulateDateResponse, error)
+	Simulate(context.Context, *SimulateDataRequest) (*SimulateDataResponse, error)
 }
 
 // UnimplementedSimulateServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedSimulateServiceServer struct {
 }
 
-func (*UnimplementedSimulateServiceServer) Simulate(context.Context, *SimulateDataRequest) (*SimulateDateResponse, error) {
+func (*UnimplementedSimulateServiceServer) Simulate(context.Context, *SimulateDataRequest) (*SimulateDataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Simulate not implemented")
 }
 
@@ -317,7 +317,7 @@ var _SimulateService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*SimulateServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "simulate",
+			MethodName: "Simulate",
 			Handler:    _SimulateService_Simulate_Handler,
 		},
 	},

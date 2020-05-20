@@ -11,7 +11,10 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 
 )
-
+/*
+This function opens a connections to the sqlite3 database.
+Also, if needed creates the necessaries tables.
+ */
 func openDatabase() *sql.DB {
 	database, _ := sql.Open("sqlite3", "./bd_sqlite3/ubiwhereData.db")
 	statement, _ := database.Prepare("CREATE TABLE IF NOT EXISTS machine_data (id INTEGER PRIMARY KEY, cpu FLOAT, ram FLOAT)")
@@ -21,7 +24,9 @@ func openDatabase() *sql.DB {
 	return database
 }
 
-
+/*
+This function generate 4 integers using rand func and inserts them to the database
+ */
 func simulateDevice(db *sql.DB){
 	var arr  [4]int
 	for {
@@ -37,7 +42,10 @@ func simulateDevice(db *sql.DB){
 
 
 }
-
+/*
+This function uses the import: github.com/mackerelio/go-osstat/cpu; github.com/mackerelio/go-osstat/memory
+This library allows the fetch of ram memory usage and CPU usage.
+ */
 func getCpuRam(db *sql.DB ) {
 	for true{
 		before, err := cpu.Get()
@@ -69,11 +77,9 @@ func getCpuRam(db *sql.DB ) {
 
 func main() {
 	db:=openDatabase()
-	go getCpuRam(db)
+	go getCpuRam(db) // Goroutines to help performance.
 	go simulateDevice(db)
-	for true{
-		time.Sleep(1* time.Second)
-		//cpu,ram := <-c1, <-c1
-		//fmt.Printf("cpu: %f ,ram: %f Gbytes\n",cpu,ram)
+	for true{ // Blocking main so threads won't die
+		time.Sleep(60* time.Second)
 	}
 }

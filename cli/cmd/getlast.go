@@ -13,7 +13,9 @@ func init() {
 	rootCmd.AddCommand(getlast)
 }
 
-
+/*
+This command allows to fetch of the last n metrics for all variables.
+*/
 var getlast = &cobra.Command{
 	Use:   "getLast",
 	Short: "Get last n metrics for all variables",
@@ -33,7 +35,7 @@ var getlast = &cobra.Command{
 		var d3 int
 		var d4 int
 		db:= openDatabase()
-		rows, _ := db.Query("SELECT d1,d2,d3,d4 FROM simu_device ORDER BY id DESC limit ?;",i)
+		rows, _ := db.Query("SELECT d1,d2,d3,d4 FROM simu_device ORDER BY id DESC limit ?;",i) // limit to N values
 		for rows.Next(){
 			rows.Scan(&d1,&d2,&d3,&d4)
 			fmt.Printf("%d,%d,%d,%d\n",d1,d2,d3,d4)
