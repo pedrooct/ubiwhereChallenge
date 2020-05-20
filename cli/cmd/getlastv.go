@@ -38,6 +38,7 @@ var getlastv = &cobra.Command{
 				rows, err := db.Query(q,i)
 				if err != nil{
 					fmt.Printf("Error: query malformed\n")
+					return
 				}
 				fmt.Printf("%s:\n",args[v])
 				for rows.Next(){
