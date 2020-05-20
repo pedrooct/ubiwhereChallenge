@@ -2,17 +2,17 @@ syntax = "proto3";
 
 package pb;
 
-message simulateDataRequest {
+message SimulateDataRequest {
     int64 d1 = 1;
     int64 d2 = 2;
     int64 d3 = 3;
     int64 d4 = 4;
 }
 
-message helloResponse {
+message SimulateDateResponse {
     string ok = 1;
 }
 
-service helloService {
-    rpc simulate(simulateDataRequest) returns (helloResponse) {};
+service SimulateService {
+    rpc simulate(SimulateDataRequest) returns (SimulateDateResponse) {};
 }

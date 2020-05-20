@@ -100,7 +100,7 @@ func (x *SimulateDataRequest) GetD4() int64 {
 	return 0
 }
 
-type HelloResponse struct {
+type SimulateDateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -108,8 +108,8 @@ type HelloResponse struct {
 	Ok string `protobuf:"bytes,1,opt,name=ok,proto3" json:"ok,omitempty"`
 }
 
-func (x *HelloResponse) Reset() {
-	*x = HelloResponse{}
+func (x *SimulateDateResponse) Reset() {
+	*x = SimulateDateResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_simulate_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -117,13 +117,13 @@ func (x *HelloResponse) Reset() {
 	}
 }
 
-func (x *HelloResponse) String() string {
+func (x *SimulateDateResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*HelloResponse) ProtoMessage() {}
+func (*SimulateDateResponse) ProtoMessage() {}
 
-func (x *HelloResponse) ProtoReflect() protoreflect.Message {
+func (x *SimulateDateResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_simulate_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -135,12 +135,12 @@ func (x *HelloResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use HelloResponse.ProtoReflect.Descriptor instead.
-func (*HelloResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use SimulateDateResponse.ProtoReflect.Descriptor instead.
+func (*SimulateDateResponse) Descriptor() ([]byte, []int) {
 	return file_simulate_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *HelloResponse) GetOk() string {
+func (x *SimulateDateResponse) GetOk() string {
 	if x != nil {
 		return x.Ok
 	}
@@ -151,19 +151,20 @@ var File_simulate_proto protoreflect.FileDescriptor
 
 var file_simulate_proto_rawDesc = []byte{
 	0x0a, 0x0e, 0x73, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x12, 0x02, 0x70, 0x62, 0x22, 0x55, 0x0a, 0x13, 0x73, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65,
+	0x12, 0x02, 0x70, 0x62, 0x22, 0x55, 0x0a, 0x13, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65,
 	0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x64,
 	0x31, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x64, 0x31, 0x12, 0x0e, 0x0a, 0x02, 0x64,
 	0x32, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x64, 0x32, 0x12, 0x0e, 0x0a, 0x02, 0x64,
 	0x33, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x64, 0x33, 0x12, 0x0e, 0x0a, 0x02, 0x64,
-	0x34, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x64, 0x34, 0x22, 0x1f, 0x0a, 0x0d, 0x68,
-	0x65, 0x6c, 0x6c, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02,
-	0x6f, 0x6b, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x6f, 0x6b, 0x32, 0x48, 0x0a, 0x0c,
-	0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x38, 0x0a, 0x08,
-	0x73, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x17, 0x2e, 0x70, 0x62, 0x2e, 0x73, 0x69,
-	0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x11, 0x2e, 0x70, 0x62, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x34, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x64, 0x34, 0x22, 0x26, 0x0a, 0x14, 0x53,
+	0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x6f, 0x6b, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x02, 0x6f, 0x6b, 0x32, 0x52, 0x0a, 0x0f, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x53,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3f, 0x0a, 0x08, 0x73, 0x69, 0x6d, 0x75, 0x6c, 0x61,
+	0x74, 0x65, 0x12, 0x17, 0x2e, 0x70, 0x62, 0x2e, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65,
+	0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x70, 0x62,
+	0x2e, 0x53, 0x69, 0x6d, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -180,12 +181,12 @@ func file_simulate_proto_rawDescGZIP() []byte {
 
 var file_simulate_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_simulate_proto_goTypes = []interface{}{
-	(*SimulateDataRequest)(nil), // 0: pb.simulateDataRequest
-	(*HelloResponse)(nil),       // 1: pb.helloResponse
+	(*SimulateDataRequest)(nil),  // 0: pb.SimulateDataRequest
+	(*SimulateDateResponse)(nil), // 1: pb.SimulateDateResponse
 }
 var file_simulate_proto_depIdxs = []int32{
-	0, // 0: pb.helloService.simulate:input_type -> pb.simulateDataRequest
-	1, // 1: pb.helloService.simulate:output_type -> pb.helloResponse
+	0, // 0: pb.SimulateService.simulate:input_type -> pb.SimulateDataRequest
+	1, // 1: pb.SimulateService.simulate:output_type -> pb.SimulateDateResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -212,7 +213,7 @@ func file_simulate_proto_init() {
 			}
 		}
 		file_simulate_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HelloResponse); i {
+			switch v := v.(*SimulateDateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -252,72 +253,72 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// HelloServiceClient is the client API for HelloService service.
+// SimulateServiceClient is the client API for SimulateService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type HelloServiceClient interface {
-	Simulate(ctx context.Context, in *SimulateDataRequest, opts ...grpc.CallOption) (*HelloResponse, error)
+type SimulateServiceClient interface {
+	Simulate(ctx context.Context, in *SimulateDataRequest, opts ...grpc.CallOption) (*SimulateDateResponse, error)
 }
 
-type helloServiceClient struct {
+type simulateServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewHelloServiceClient(cc grpc.ClientConnInterface) HelloServiceClient {
-	return &helloServiceClient{cc}
+func NewSimulateServiceClient(cc grpc.ClientConnInterface) SimulateServiceClient {
+	return &simulateServiceClient{cc}
 }
 
-func (c *helloServiceClient) Simulate(ctx context.Context, in *SimulateDataRequest, opts ...grpc.CallOption) (*HelloResponse, error) {
-	out := new(HelloResponse)
-	err := c.cc.Invoke(ctx, "/pb.helloService/simulate", in, out, opts...)
+func (c *simulateServiceClient) Simulate(ctx context.Context, in *SimulateDataRequest, opts ...grpc.CallOption) (*SimulateDateResponse, error) {
+	out := new(SimulateDateResponse)
+	err := c.cc.Invoke(ctx, "/pb.SimulateService/simulate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// HelloServiceServer is the server API for HelloService service.
-type HelloServiceServer interface {
-	Simulate(context.Context, *SimulateDataRequest) (*HelloResponse, error)
+// SimulateServiceServer is the server API for SimulateService service.
+type SimulateServiceServer interface {
+	Simulate(context.Context, *SimulateDataRequest) (*SimulateDateResponse, error)
 }
 
-// UnimplementedHelloServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedHelloServiceServer struct {
+// UnimplementedSimulateServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedSimulateServiceServer struct {
 }
 
-func (*UnimplementedHelloServiceServer) Simulate(context.Context, *SimulateDataRequest) (*HelloResponse, error) {
+func (*UnimplementedSimulateServiceServer) Simulate(context.Context, *SimulateDataRequest) (*SimulateDateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Simulate not implemented")
 }
 
-func RegisterHelloServiceServer(s *grpc.Server, srv HelloServiceServer) {
-	s.RegisterService(&_HelloService_serviceDesc, srv)
+func RegisterSimulateServiceServer(s *grpc.Server, srv SimulateServiceServer) {
+	s.RegisterService(&_SimulateService_serviceDesc, srv)
 }
 
-func _HelloService_Simulate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SimulateService_Simulate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SimulateDataRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HelloServiceServer).Simulate(ctx, in)
+		return srv.(SimulateServiceServer).Simulate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.helloService/Simulate",
+		FullMethod: "/pb.SimulateService/Simulate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HelloServiceServer).Simulate(ctx, req.(*SimulateDataRequest))
+		return srv.(SimulateServiceServer).Simulate(ctx, req.(*SimulateDataRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _HelloService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "pb.helloService",
-	HandlerType: (*HelloServiceServer)(nil),
+var _SimulateService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "pb.SimulateService",
+	HandlerType: (*SimulateServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "simulate",
-			Handler:    _HelloService_Simulate_Handler,
+			Handler:    _SimulateService_Simulate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
