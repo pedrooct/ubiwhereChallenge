@@ -37,7 +37,7 @@ The database is already populate for immediate use.
 
 Go to the cli directory, The main.go file allows the use of cli with the following commands:
 ```
-- go run main.go test (Verifies that the cli is working)
+- go run main.go (Verifies that the cli is working)
 - go run main.go getLast N (E.g: go run main.go getLast 3)
 - go run main.go getLastV N D (E.g: go run main.go getLast 3 D1 D2)
 - go run main.go getAvg D (E.g: go run main.go getLast D1)
